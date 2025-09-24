@@ -20,42 +20,6 @@ A modern, full-stack personal finance app. Track income and expenses, filter by 
 
 ---
 
-## Monorepo Layout
--- PL/pgSQL function
-budget-tracker/
-├─ server/                    # Express API + Postgres
-│  ├─ src/
-│  │  ├─ index.js            # app bootstrap
-│  │  ├─ db.js               # pg Pool
-│  │  ├─ auth.js             # Cognito JWT verify (access or id token)
-│  │  ├─ routes/
-│  │  │  ├─ transactions.js  # CRUD + pagination + categories
-│  │  │  └─ stats.js         # summary (income/expense + by-category)
-│  ├─ package.json
-│  └─ .env.example
-├─ src/                      # React app
-│  ├─ components/
-│  │  ├─ FiltersBar.jsx
-│  │  ├─ TransactionsTable.jsx
-│  │  ├─ TransactionForm.jsx
-│  │  ├─ SpendingByCategoryPie.jsx
-│  │  ├─ MonthlyTotalsBar.jsx
-│  │  ├─ PaginationBar.jsx
-│  │  └─ ThemeToggle.jsx
-│  ├─ context/AuthContext.jsx
-│  ├─ lib/api.js
-│  ├─ pages/
-│  │  ├─ Home.jsx (+ home.css)     # animated landing hero
-│  │  └─ Dashboard.jsx
-│  ├─ App.jsx, main.jsx, index.css
-│  └─ vite.config.js (optional proxy)
-├─ package.json              # root scripts (concurrently)
-├─ .env.example              # frontend env (no secrets)
-└─ README.md
-$$ LANGUAGE plpgsql;
-
----
-
 ## Requirements
 
 - **Node.js ≥ 22.12** (Vite 7 requires 20.19+ or 22.12+; recommended 22.x)
