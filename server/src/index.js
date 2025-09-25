@@ -5,9 +5,12 @@ import 'dotenv/config';
 
 import txRoutes from './routes/transactions.js';
 import statsRoutes from './routes/stats.js';
+import { assertDbConnection } from './db.js';
 
 const app = express();
 const PORT = process.env.PORT || 4000;
+
+assertDbConnection();
 
 // CORS
 const allowed = String(process.env.CORS_ORIGINS || '')
